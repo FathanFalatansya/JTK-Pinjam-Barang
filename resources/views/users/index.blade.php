@@ -32,7 +32,7 @@
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>
-                                    <a href="{{route('users.edit', $user)}}" class="btn btn-primary mb-2">
+                                    <a href="{{route('users.edit', $user)}}" class="btn btn-info mb-2">
                                         Edit
                                     </a>       
                                     <a href="{{route('users.destroy', $user)}}" onclick="notificationBeforeDelete(event, this)" class="btn btn-danger mb-2">

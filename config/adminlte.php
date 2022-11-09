@@ -225,7 +225,13 @@ return [
 
     'menu' => [
         [
-            'text' => 'User',
+            'text' => 'Dashboard',
+            'url'  => '/home',
+            'icon'  => 'fa fa-home',
+        ],
+    
+        [
+            'text' => 'Data User',
             'url'  => '/users',
             'icon'  => 'fa fa-users',
         ],
@@ -235,6 +241,13 @@ return [
             'url'  => '/Mahasiswa',
             'icon'  => 'fa fa-graduation-cap',
         ],
+
+        [
+            'text' => 'Data Barang',
+            'url'  => '/DataBarang',
+            'icon'  => 'fa fa-database',
+        ],
+
     ],
 
     /*

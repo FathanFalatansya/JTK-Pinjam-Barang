@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\DataBarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +20,13 @@ Route::get('/', function () {
 });
 
 Route::resource('/Mahasiswa',MahasiswaController::class)->middleware('auth');
+Route::resource('/DataBarang',DataBarangController::class)->middleware('auth');
 
 Auth::routes();
+
+
 
 Route::resource('users', \App\Http\Controllers\UserController::class)
     ->middleware('auth');
 
-Route::get('/home', function() {
-    return view('home');
-})->name('home')->middleware('auth');
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');

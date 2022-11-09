@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\DataBarang;
 
 class HomeController extends Controller
 {
+    public function index()
+    {
+        $data = DataBarang::all();
+        return view('home',compact('data'));
+    }
     /**
      * Create a new controller instance.
      *
@@ -21,8 +27,5 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
-    }
+    
 }

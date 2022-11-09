@@ -3,7 +3,7 @@
 @section('title', 'List Mahasiswa')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">Data Mahasiswa</h1>
+    <h1 class="m-0 text-dark">Data Barang</h1>
 @stop
 
 @section('content')
@@ -12,15 +12,15 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-body">
-                        <table class="table table-hover table-bordered table-stripped" id="table-mahasiswa">
-                        <a class="btn btn-primary mb-2" href="{{ 'Mahasiswa/create' }}">Tambah data</a>
+                        <table class="table table-hover table-bordered table-stripped" id="table-barang">
+                        <a class="btn btn-primary mb-2" href="{{ '' }}">Tambah data</a>
                             <thead>
                                 <tr class="table-active">
                                     <th>No.</th>
-                                    <th>Nama</th>
-                                    <th>Nim</th>
-                                    <th>Kelas</th>
-                                    <th>Opsi</th>
+                                    <th>Nama Barang</th>
+                                    <th>Kode Barang</th>
+                                    <th>Jumlah Barang</th>
+                                    <th>Status</th>
                                 </tr>   
                             </thead>
                             
@@ -28,12 +28,13 @@
                             @foreach($data as $key=>$value)
                                 <tr>
                                     <td>{{$key+1}}</td>
-                                    <td>{{ $value->Nama }}</td>
-                                    <td>{{ $value->Nim }}</td>
-                                    <td>{{ $value->Kelas }}</td>
-                                    <td>
+                                    <td>{{ $value->Nama_Barang }}</td>
+                                    <td>{{ $value->Kode_Barang }}</td>
+                                    <td>{{ $value->Jumlah_Barang }}</td>
+                                    <td>{{ $value->Status }}</td>
+                                    <!-- <td> -->
                                     
-                                        <div class="row d-flex">                                               
+                                        <!-- <div class="row d-flex">                                               
                                             <a href="{{ url('Mahasiswa/'.$value->id.'/edit') }}" class="btn btn-info mb-2 mr-1" >
                                                 Edit
                                              </a>  
@@ -42,10 +43,10 @@
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 <button class="btn btn-danger" type="submit" >Delete</button>
                                             </form>                                                                                                                                                                   
-                                        </div>
+                                        </div> -->
                                     
                                    
-                                </td>
+                                        <!-- </td> -->
                                 </tr>  
                             @endforeach
                             </tbody>
@@ -59,12 +60,8 @@
 @stop
 
 @push('js')
-    <!-- <form action="{{route('Mahasiswa.destroy',$value)}}" id="delete-form" method="post">
-        @method('delete')
-        @csrf
-    </form> -->
     <script>
-        $('#table-mahasiswa').DataTable({
+        $('#table-barang').DataTable({
             "responsive": true,
         });
 
