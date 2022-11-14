@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'Dashboard')
 
 @section('content_header')
     <h1 class="m-0 text-dark ml-2">JTK PINJAM BARANG</h1>
@@ -17,21 +17,18 @@
         </div>
     </div>
   
-       
-            <div class="row ml-1">
-                <div class="col-md-2">
-                     <div class="card text-white bg-primary" type="button" style="max-width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Peminjaman</h5>
-                         </div>
-                    </div>
+    
+            <div class="row ml-2">
+                <div class="col-md-1.5">
+                     <a class="btn btn-primary btn-lg mb-2" href="{{ 'home/create' }}">
+                        Peminjaman
+                    </a>
                 </div>
+               
                 <div class="col">
-                    <div class="card text-white bg-secondary" type="button" style="max-width: 18rem;">
-                            <div class="card-body">
-                            <h5 class="card-title">Pengembalian</h5>
-                        </div>
-                    </div>
+                     <a class="btn btn-secondary btn-lg mb-2" href="{{ 'home/' }}">
+                        Pengembalian
+                    </a>
                 </div>
             </div>
 
@@ -45,7 +42,6 @@
                                                 <tr class="table-active">
                                                     <th>No.</th>
                                                     <th>Nama Barang</th>
-                                                    <th>Kode Barang</th>
                                                     <th>Jumlah Barang</th>
                                                     <th>Status</th>
                                                 </tr>   
@@ -55,7 +51,6 @@
                                                     <tr>
                                                         <td>{{$key+1}}</td>
                                                         <td>{{ $value->Nama_Barang }}</td>
-                                                        <td>{{ $value->Kode_Barang }}</td>
                                                         <td>{{ $value->Jumlah_Barang }}</td>
                                                         <td>{{ $value->Status }}</td>
                                                         <!-- <td> -->

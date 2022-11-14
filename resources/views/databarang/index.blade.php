@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <div class="card-body">
                         <table class="table table-hover table-bordered table-stripped" id="table-barang">
-                        <a class="btn btn-primary mb-2" href="{{ '' }}">Tambah data</a>
+                        <a class="btn btn-primary mb-2" href="{{ 'DataBarang/create' }}">Tambah data</a>
                             <thead>
                                 <tr class="table-active">
                                     <th>No.</th>
@@ -21,6 +21,7 @@
                                     <th>Kode Barang</th>
                                     <th>Jumlah Barang</th>
                                     <th>Status</th>
+                                    <th>Opsi</th>
                                 </tr>   
                             </thead>
                             
@@ -32,21 +33,21 @@
                                     <td>{{ $value->Kode_Barang }}</td>
                                     <td>{{ $value->Jumlah_Barang }}</td>
                                     <td>{{ $value->Status }}</td>
-                                    <!-- <td> -->
+                                    <td>
                                     
-                                        <!-- <div class="row d-flex">                                               
-                                            <a href="{{ url('Mahasiswa/'.$value->id.'/edit') }}" class="btn btn-info mb-2 mr-1" >
+                                        <div class="row d-flex">                                               
+                                            <a href="{{ url('DataBarang/'.$value->id.'/edit') }}" class="btn btn-info mb-2 mr-1" >
                                                 Edit
                                              </a>  
-                                            <form action="{{ url('Mahasiswa/'.$value->id)}}" onclick="notificationBeforeDelete(event, this)" method="POST">
+                                            <form action="{{ url('DataBarang/'.$value->id)}}" onclick="notificationBeforeDelete(event, this)" method="POST">
                                                  @csrf
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 <button class="btn btn-danger" type="submit" >Delete</button>
                                             </form>                                                                                                                                                                   
-                                        </div> -->
+                                        </div>
                                     
                                    
-                                        <!-- </td> -->
+                                        </td>
                                 </tr>  
                             @endforeach
                             </tbody>
@@ -60,6 +61,10 @@
 @stop
 
 @push('js')
+    <form action="{{route('DataBarang.destroy',$value->id)}}" id="delete-form" method="post">
+        @method('delete')
+        @csrf
+    </form>
     <script>
         $('#table-barang').DataTable({
             "responsive": true,

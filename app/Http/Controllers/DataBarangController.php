@@ -26,7 +26,8 @@ class DataBarangController extends Controller
      */
     public function create()
     {
-        //
+        $model = new DataBarang;
+        return view('databarang.create', compact('model'));
     }
 
     /**
@@ -37,7 +38,13 @@ class DataBarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $model = new DataBarang;
+        $model->Nama_Barang = $request->input('NamaBarang');
+        $model->Kode_Barang = $request->input('KodeBarang');
+        $model->Jumlah_Barang = $request->input('JumlahBarang');
+        $model->save();
+
+        return redirect()->to('/DataBarang');
     }
 
     /**
@@ -59,7 +66,8 @@ class DataBarangController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = DataBarang::find($id);
+        return view('databarang.edit',compact('model'));
     }
 
     /**
@@ -71,7 +79,14 @@ class DataBarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $model = DataBarang::find($id);
+        $model->Nama_Barang = $request->input('NamaBarang');
+        $model->Kode_Barang = $request->input('KodeBarang');
+        $model->Jumlah_Barang = $request->input('JumlahBarang');
+        $model->Status = $request->input('Status');
+        $model->save();
+
+        return redirect()->to('/DataBarang');
     }
 
     /**
@@ -82,6 +97,8 @@ class DataBarangController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $model = DataBarang::find($id);
+        $model->delete();
+        return redirect('/DataBarang');
     }
 }

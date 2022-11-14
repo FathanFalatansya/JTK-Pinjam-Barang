@@ -59,10 +59,10 @@
 @stop
 
 @push('js')
-    <!-- <form action="{{route('Mahasiswa.destroy',$value)}}" id="delete-form" method="post">
+    <form action="{{route('Mahasiswa.destroy',$value->id)}}" id="delete-form" method="post">
         @method('delete')
         @csrf
-    </form> -->
+    </form>
     <script>
         $('#table-mahasiswa').DataTable({
             "responsive": true,

@@ -22,6 +22,12 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    public function create()
+    {
+        $model = new DataBarang;
+        return view('peminjaman.create', compact('model'));
+    }
+
     /**
      * Show the application dashboard.
      *

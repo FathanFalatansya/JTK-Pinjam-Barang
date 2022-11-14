@@ -29,4 +29,5 @@ Auth::routes();
 Route::resource('users', \App\Http\Controllers\UserController::class)
     ->middleware('auth');
 
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
+Route::resource('home', \App\Http\Controllers\HomeController::class)->middleware('auth');
+
