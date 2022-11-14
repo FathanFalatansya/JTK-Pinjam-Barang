@@ -17,17 +17,20 @@
 
                         <div class="form-group">
                         <label for="InputNamaBarang">Nama Barang</label>    
-                        <input type="text" class="form-control" name="NamaBarang" placeholder="Nama Barang" id="InputNamaBarang"><br/>
+                        <input type="text" class="form-control @error('NamaBarang') is-invalid @enderror" name="NamaBarang" placeholder="Nama Barang" id="InputNamaBarang"><br/>
+                        @error('NamaBarang') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
                         <div class="form-group">
                         <label for="InputKodeBarang">Kode Barang</label>    
-                        <input type="text" class="form-control" name="KodeBarang" placeholder="Kode Barang(8-digit)" id="InputKodeBarang"><br/>
+                        <input type="text" class="form-control @error('KodeBarang') is-invalid @enderror" name="KodeBarang" placeholder="Kode Barang(8-digit)" id="InputKodeBarang"><br/>
+                        @error('KodeBarang') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
                         <div class="form-group">
                         <label for="InputJumlahBarang">Jumlah Barang</label>    
-                        <input type="text" class="form-control" name="JumlahBarang" placeholder="Jumlah Barang (angka)" id="InputJumlahBarang"><br/>
+                        <input type="text" class="form-control @error('JumlahBarang') is-invalid @enderror" name="JumlahBarang" placeholder="Jumlah Barang (angka)" id="InputJumlahBarang"><br/>
+                        @error('Jumlah_Barang') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                     
 

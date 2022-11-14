@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mahasiswa;
+use Illuminate\Support\Facades\Validator;
 
 class MahasiswaController extends Controller
 {
@@ -37,7 +38,13 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $request->validate([
+            'Nama'=>'required', 
+            'Nim'=>'required|min:9|unique:mahasiswa,Nim',
+            'Kelas'=>'required|min:2',
+        ]);
+        
+
         $model = new Mahasiswa;
         $model->Nama = $request->input('Nama');
         $model->Nim = $request->input('Nim');

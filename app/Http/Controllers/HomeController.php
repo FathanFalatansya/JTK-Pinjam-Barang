@@ -28,6 +28,7 @@ class HomeController extends Controller
         return view('peminjaman.create', compact('model'));
     }
 
+    
     /**
      * Show the application dashboard.
      *

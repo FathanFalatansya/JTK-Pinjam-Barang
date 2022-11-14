@@ -38,6 +38,12 @@ class DataBarangController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'NamaBarang'=>'required',
+            'KodeBarang'=>'required|min:8|unique:databarang,Kode_Barang',
+            'JumlahBarang'=>'required',
+        ]);
+
         $model = new DataBarang;
         $model->Nama_Barang = $request->input('NamaBarang');
         $model->Kode_Barang = $request->input('KodeBarang');
