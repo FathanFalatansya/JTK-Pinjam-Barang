@@ -248,6 +248,12 @@ return [
             'icon'  => 'fa fa-database',
         ],
 
+        [
+            'text' => 'Data Peminjaman',
+            'url'  => '/datapeminjaman',
+            'icon'  => 'fa fa-database',
+        ],
+
     ],
 
     /*

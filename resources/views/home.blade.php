@@ -20,7 +20,7 @@
     
             <div class="row ml-2">
                 <div class="col-md-1.5">
-                     <a class="btn btn-primary btn-lg mb-2" href="{{ 'home/create' }}">
+                     <a class="btn btn-primary btn-lg mb-2" href="{{ 'datapeminjaman/create' }}">
                         Peminjaman
                     </a>
                 </div>

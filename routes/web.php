@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\DataBarangController;
+use App\Http\Controllers\DataPeminjamanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ Route::get('/', function () {
 
 Route::resource('/Mahasiswa',MahasiswaController::class)->middleware('auth');
 Route::resource('/DataBarang',DataBarangController::class)->middleware('auth');
+Route::resource('/datapeminjaman',DataPeminjamanController::class)->middleware('auth');
 
 Auth::routes();
 

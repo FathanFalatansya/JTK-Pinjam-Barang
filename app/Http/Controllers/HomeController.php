@@ -24,8 +24,8 @@ class HomeController extends Controller
 
     public function create()
     {
-        $model = new DataBarang;
-        return view('peminjaman.create', compact('model'));
+        // $model = new DataBarang;
+        // return view('peminjaman.create', compact('model'));
     }
 
     
