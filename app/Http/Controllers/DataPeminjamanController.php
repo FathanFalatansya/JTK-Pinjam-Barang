@@ -38,7 +38,7 @@ class DataPeminjamanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'Nim'=>'required',
+            'Nim'=>'required|min:9|unique:datapeminjaman,Nim',
             'NamaBarang'=>'required',
             'KodeBarang'=>'required|min:8',
             'JumlahBarang'=>'required',

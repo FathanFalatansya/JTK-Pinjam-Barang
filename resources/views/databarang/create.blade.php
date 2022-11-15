@@ -38,7 +38,7 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Simpan</button>
-                        <a href="{{ url('/databarang') }}" class="btn btn-default">
+                        <a href="{{ url('/DataBarang') }}" class="btn btn-default">
                             Batal
                         </a>
                     </div>
